@@ -12,6 +12,7 @@
 #import "GeneralCollectionCell.h"
 #import "LiveCategoryModel.h"
 #import "VideoPlayerController.h"
+#import <IJKMediaFramework/IJKMediaFramework.h>
 
 
 #define CELL_GAP 10.0
@@ -107,10 +108,12 @@
     LiveModel *live = liveCategory.livesArray[indexPath.row];
     VideoPlayerController *videoVC = [[VideoPlayerController alloc] init];
     videoVC.url = [NSURL URLWithString:live.playurl];
-//    IJKAVMoviePlayerController *playerVC = [[IJKAVMoviePlayerController alloc] initWithContentURLString:live.playurl];
-//    [self.navigationController pushViewController:videoVC animated:YES];
     videoVC.interfaceOrientation = YES;
     [self presentViewController:videoVC animated:YES completion:nil];
+    
+//    IJKAVMoviePlayerController *playerVC = [[IJKAVMoviePlayerController alloc] initWithContentURLString:live.playurl];
+//    [self.navigationController pushViewController:playerVC animated:YES];
+    
 }
 
 #pragma mark - Collection delegate flowLayout

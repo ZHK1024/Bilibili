@@ -23,12 +23,12 @@
     
     self.navigationController.navigationBarHidden = YES;
 
-    VideoPlayerController *videoVC = [[VideoPlayerController alloc] init];
-    videoVC.url = [NSURL URLWithString:@"http://dl.live-play.acgvideo.com/live-dl/749463/live_28331819_9666305.flv?wsSecret=e6d1451034b27ec41635bd799fd29b9d&wsTime=1508223722"];
-//
-    [self.navigationController.navigationBar setHidden:YES];
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:videoVC animated:YES];
+//    VideoPlayerController *videoVC = [[VideoPlayerController alloc] init];
+//    videoVC.url = [NSURL URLWithString:@"http://dl.live-play.acgvideo.com/live-dl/749463/live_28331819_9666305.flv?wsSecret=e6d1451034b27ec41635bd799fd29b9d&wsTime=1508223722"];
+////
+//    [self.navigationController.navigationBar setHidden:YES];
+//    self.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:videoVC animated:YES];
 //    [self.navigationController.tabBarController presentViewController:videoVC animated:YES completion:nil];
     
     

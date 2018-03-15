@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24E75F781F95D953002BF4DB /* MS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F0B4B61D8549EF00C449C7 /* MS.storyboard */; };
-		4E98D6BBC1DC5DA601C63DEF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9842C45535DB4EAEC9164B40 /* libPods.a */; };
+		458CBEDA6277ED5EBC805B6B /* libPods-Bilibili.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D35C2F3457E184522E39BB28 /* libPods-Bilibili.a */; };
 		E2E764971D9215BD00A72E46 /* LivePartitionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E764961D9215BD00A72E46 /* LivePartitionModel.m */; };
 		E2E7649B1D92169700A72E46 /* LiveSubIconModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E7649A1D92169700A72E46 /* LiveSubIconModel.m */; };
 		E2E764A01D92188000A72E46 /* LiveCoverModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E7649F1D92188000A72E46 /* LiveCoverModel.m */; };
@@ -43,9 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22E5D894ECF62A758679F8FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		29E3A963344DD78D01413B93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		9842C45535DB4EAEC9164B40 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3187466289C7E29A89526136 /* Pods-Bilibili.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bilibili.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili.release.xcconfig"; sourceTree = "<group>"; };
+		D35C2F3457E184522E39BB28 /* libPods-Bilibili.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bilibili.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E764951D9215BD00A72E46 /* LivePartitionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LivePartitionModel.h; sourceTree = "<group>"; };
 		E2E764961D9215BD00A72E46 /* LivePartitionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LivePartitionModel.m; sourceTree = "<group>"; };
 		E2E764991D92169700A72E46 /* LiveSubIconModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveSubIconModel.h; sourceTree = "<group>"; };
@@ -96,6 +95,7 @@
 		E2FA344E1D913CF200DBB12A /* LiveCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveCategoryModel.m; sourceTree = "<group>"; };
 		E2FA34511D913CFF00DBB12A /* LiveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveModel.h; sourceTree = "<group>"; };
 		E2FA34521D913CFF00DBB12A /* LiveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveModel.m; sourceTree = "<group>"; };
+		FA3419B32C05E62FF3B7E332 /* Pods-Bilibili.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bilibili.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,14 +116,31 @@
 				E2F49C621D94F88700991A89 /* CoreGraphics.framework in Frameworks */,
 				E2F49C601D94F87D00991A89 /* AVFoundation.framework in Frameworks */,
 				E2F49C5E1D94F86D00991A89 /* AudioToolbox.framework in Frameworks */,
-				4E98D6BBC1DC5DA601C63DEF /* libPods.a in Frameworks */,
 				E2F49C5C1D94F85100991A89 /* IJKMediaFramework.framework in Frameworks */,
+				458CBEDA6277ED5EBC805B6B /* libPods-Bilibili.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47141A9F247D8749F7C6D3E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35C2F3457E184522E39BB28 /* libPods-Bilibili.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA3FB0DE11CFCC50E060D18A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA3419B32C05E62FF3B7E332 /* Pods-Bilibili.debug.xcconfig */,
+				3187466289C7E29A89526136 /* Pods-Bilibili.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E2E764941D92159D00A72E46 /* LivePartitionModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +199,8 @@
 			children = (
 				E2F0B4AC1D8549EF00C449C7 /* Bilibili */,
 				E2F0B4AB1D8549EF00C449C7 /* Products */,
-				ECB6D50AD5C00855ED5E5336 /* Pods */,
+				BA3FB0DE11CFCC50E060D18A /* Pods */,
+				47141A9F247D8749F7C6D3E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -320,7 +338,6 @@
 				E2F49C611D94F88700991A89 /* CoreGraphics.framework */,
 				E2F49C5F1D94F87D00991A89 /* AVFoundation.framework */,
 				E2F49C5D1D94F86D00991A89 /* AudioToolbox.framework */,
-				9842C45535DB4EAEC9164B40 /* libPods.a */,
 				E2F49C5B1D94F85100991A89 /* IJKMediaFramework.framework */,
 			);
 			path = FrameWork;
@@ -430,15 +447,6 @@
 			path = LiveModel;
 			sourceTree = "<group>";
 		};
-		ECB6D50AD5C00855ED5E5336 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				29E3A963344DD78D01413B93 /* Pods.debug.xcconfig */,
-				22E5D894ECF62A758679F8FB /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,12 +454,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2F0B4C11D8549EF00C449C7 /* Build configuration list for PBXNativeTarget "Bilibili" */;
 			buildPhases = (
-				6A82A248ABC28F0495BD55F4 /* Check Pods Manifest.lock */,
+				85127255D30D4BF50F7D753F /* [CP] Check Pods Manifest.lock */,
 				E2F0B4A61D8549EF00C449C7 /* Sources */,
 				E2F0B4A71D8549EF00C449C7 /* Frameworks */,
 				E2F0B4A81D8549EF00C449C7 /* Resources */,
-				12E8D8E26E8D2A0B51F4581D /* Embed Pods Frameworks */,
-				D5CD695C9524E2D420374FFF /* Copy Pods Resources */,
+				0F42894F69C555A535B67B4C /* [CP] Embed Pods Frameworks */,
+				03C4A1A07DDBD9D3DF984B15 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -509,49 +517,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12E8D8E26E8D2A0B51F4581D /* Embed Pods Frameworks */ = {
+		03C4A1A07DDBD9D3DF984B15 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6A82A248ABC28F0495BD55F4 /* Check Pods Manifest.lock */ = {
+		0F42894F69C555A535B67B4C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bilibili/Pods-Bilibili-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D5CD695C9524E2D420374FFF /* Copy Pods Resources */ = {
+		85127255D30D4BF50F7D753F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -683,7 +691,7 @@
 		};
 		E2F0B4C21D8549EF00C449C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29E3A963344DD78D01413B93 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = FA3419B32C05E62FF3B7E332 /* Pods-Bilibili.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9K5P26QDPB;
@@ -701,7 +709,7 @@
 		};
 		E2F0B4C31D8549EF00C449C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22E5D894ECF62A758679F8FB /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3187466289C7E29A89526136 /* Pods-Bilibili.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9K5P26QDPB;

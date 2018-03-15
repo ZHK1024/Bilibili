@@ -8,6 +8,7 @@
 
 #import "VideoPlayerController.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
+#import <Masonry.h>
 
 @interface VideoPlayerController ()
 
@@ -18,54 +19,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    UIView *playerView = [self.player view];
-    UIView *displayView = [[UIView alloc] init];
+
     
-//    if (_interfaceOrientation) {
-//        displayView.frame = CGRectMake(0, 100, 375, 200);
-//    }else {
-        displayView.frame = self.view.bounds;
-//    }
-    
-    self.playerView = displayView;
+    _interfaceOrientation = NO;
+
+    self.playerView = [[UIView alloc] init];
     self.playerView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.playerView];
     
-    playerView.frame = self.playerView.bounds;
-    playerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    [self.playerView insertSubview:playerView atIndex:1];
-    [_player setScalingMode:IJKMPMovieScalingModeAspectFill];
+    [self.playerView insertSubview:self.player.view atIndex:1];
     
     [self installMovieNotificationObservers];
     
+    [_playerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
     
-//    NSNumber * value  = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-//    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-    
-    
-    
-    
+    [self.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
 
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        // 切换到全屏
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSLog(@"sssssssssss");
-            [UIView animateWithDuration:0.25 animations:^{
-                VideoPlayerController *v = [[VideoPlayerController alloc] init];
-                v.player = _player;
-                v.interfaceOrientation = NO;
-                [self removeMovieNotificationObservers];
-                [self presentViewController:v animated:NO completion:nil];
-            }];
-        });
-    });
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismis)];
+    [self.view addGestureRecognizer:tap];
+    
+    
+    self.view.autoresizesSubviews = YES;
+}
+
+- (void)dismis {
+    [_player shutdown];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)dealloc {
+    NSLog(@"%s", __func__);
     [self removeMovieNotificationObservers];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -189,19 +177,24 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return YES;
+    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
 }
 
 - (id<IJKMediaPlayback>)player {
     if (_player == nil) {
-        IJKFFOptions *options = [[IJKFFOptions alloc] init];
-        [options setPlayerOptionIntValue:1 forKey:@"videotoolbox"];
-        [options setPlayerOptionIntValue:29.97 forKey:@"r"];
-        [options setPlayerOptionIntValue:256 forKey:@"vol"];
+        IJKFFOptions *options =
+//        [[IJKFFOptions alloc] init];
+//        [options setPlayerOptionIntValue:1 forKey:@"videotoolbox"];
+//        [options setPlayerOptionIntValue:29.97 forKey:@"r"];
+//        [options setPlayerOptionIntValue:100 forKey:@"vol"];
+        
+        [IJKFFOptions optionsByDefault];
         
         IJKFFMoviePlayerController *player = [[IJKFFMoviePlayerController alloc] initWithContentURL:_url withOptions:options];
-        player.scalingMode = IJKMPMovieScalingModeFill;
+        player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth |UIViewAutoresizingFlexibleHeight;
+        player.scalingMode = IJKMPMovieScalingModeAspectFill;
         player.shouldAutoplay = YES;
+        
         [player prepareToPlay];
         self.player = player;
     }
